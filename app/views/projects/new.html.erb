@@ -1,0 +1,19 @@
+<h1>スケジュール管理アプリ</h1>
+<%= form_with model: @project, local: true do |f| %>
+  <%= f.label :name, '案件名' %><br>
+  <%= f.text_field :name, placeholder: '※必須' %><br>
+  <%= f.label :client, '受注先' %><br>
+  <%= f.text_field :client %><br>
+  <%= f.label :construction_start, '工期（着工）' %><br>
+  <%= f.date_field :construction_start %><br>
+  <%= f.label :construction_completion, '工期（竣工）' %><br>
+  <%= f.date_field :construction_completion %><br>
+  <%= f.label :content, '内容' %><br>
+  <%= f.text_field :content %><br>
+  <%= f.label :people_count, '必要人数' %><br>
+  <%= f.number_field :people_count %><br>
+  <%= f.label :assign_member, '参加者' %><br>
+  <%= f.text_field :assign_member %><br>
+  <%= f.submit '登録' %><br>
+<% end %>
+<%= link_to '戻る', root_path %><br>
