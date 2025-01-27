@@ -1,32 +1,11 @@
 <mxfile host="65bd71144e">
     <diagram id="n_fUQwyFeDuPQJabJBcM" name="ページ1">
-        <mxGraphModel dx="1404" dy="1337" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="291" pageHeight="413" math="0" shadow="0">
+        <mxGraphModel dx="1165" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="291" pageHeight="413" background="#ffffff" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="432" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="20" y="-370" width="1770" height="1410" as="geometry"/>
-                </mxCell>
-                <mxCell id="442" value="" style="group;fillColor=none;" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="410" y="120" width="935" height="640" as="geometry"/>
-                </mxCell>
-                <mxCell id="440" value="" style="group" vertex="1" connectable="0" parent="442">
-                    <mxGeometry x="265" y="440" width="670" height="200" as="geometry"/>
-                </mxCell>
-                <mxCell id="437" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="440">
-                    <mxGeometry width="670" height="200" as="geometry"/>
-                </mxCell>
-                <mxCell id="439" value="中間テーブル" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="440">
-                    <mxGeometry width="120" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="441" value="" style="group" vertex="1" connectable="0" parent="442">
-                    <mxGeometry width="935" height="200" as="geometry"/>
-                </mxCell>
-                <mxCell id="436" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="441">
-                    <mxGeometry width="935" height="200" as="geometry"/>
-                </mxCell>
-                <mxCell id="438" value="中間テーブル" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="441">
-                    <mxGeometry width="120" height="30" as="geometry"/>
+                    <mxGeometry x="20" y="-374" width="1773" height="1410" as="geometry"/>
                 </mxCell>
                 <mxCell id="2" value="Schedule_app&lt;br&gt;database_design" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="80" y="-330" width="140" height="50" as="geometry"/>
@@ -320,7 +299,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="206" value="trucks" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
-                    <mxGeometry x="1040" y="800" width="180" height="120" as="geometry"/>
+                    <mxGeometry x="520" y="800" width="180" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="207" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="206" vertex="1">
                     <mxGeometry y="30" width="180" height="30" as="geometry"/>
@@ -472,8 +451,7 @@
                         <mxPoint x="380.11111111111086" y="390" as="sourcePoint"/>
                         <mxPoint x="380.11111111111086" y="610" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="200" y="-40"/>
-                            <mxPoint x="200" y="940"/>
+                            <mxPoint x="310" y="950"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -638,8 +616,8 @@
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="392" value="delivary_trucks" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
-                    <mxGeometry x="1040" y="600" width="180" height="120" as="geometry"/>
+                <mxCell id="392" value="site_trucks" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="600" width="180" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="393" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="392" vertex="1">
                     <mxGeometry y="30" width="180" height="30" as="geometry"/>
@@ -662,7 +640,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="398" value="delivary_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="396" vertex="1">
+                <mxCell id="398" value="site_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="396" vertex="1">
                     <mxGeometry x="30" width="150" height="30" as="geometry">
                         <mxRectangle width="150" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -685,7 +663,7 @@
                         <mxPoint x="1120" y="330.00090909090903" as="sourcePoint"/>
                         <mxPoint x="1339.9999999999995" y="499.8199999999999" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="1130" y="435"/>
+                            <mxPoint x="610" y="480"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -743,8 +721,7 @@
                         <mxPoint x="950" y="1050.090909090909" as="sourcePoint"/>
                         <mxPoint x="1179.9999999999995" y="649.9099999999999" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="1280" y="940"/>
-                            <mxPoint x="1280" y="220"/>
+                            <mxPoint x="1130" y="950"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -808,6 +785,15 @@
                 </mxCell>
                 <mxCell id="430" value="矢印の意味" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="431" vertex="1">
                     <mxGeometry width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="444" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=ERoneToMany;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="3" target="206">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="270" y="-30" as="sourcePoint"/>
+                        <mxPoint x="790" y="950" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="390" y="870"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
