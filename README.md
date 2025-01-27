@@ -25,6 +25,8 @@
 
 # データベース設計
 
+![データベース設計](/Users/nagaishoshigotoyou/Programing/projects/kyowasetsubi/schedule_app/database_design.png)
+
 ## groups テーブル
 
 | Column              | Type   | Options     |
