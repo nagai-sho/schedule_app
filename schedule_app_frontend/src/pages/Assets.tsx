@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import Header from './Header';
+import Header from '../components/Header';
 
 export const Assets: FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -60,7 +60,7 @@ export const Assets: FC = () => {
         <div>（indexより抽出・表示）</div>
         <div>クリックで編集・削除ができるように</div>
       </div>
-      <Link to="/">Homeへ</Link>
+      <Link to="/">Topへ</Link>
     </>
   );
 };

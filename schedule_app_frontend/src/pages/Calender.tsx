@@ -1,4 +1,4 @@
-import Header from './Header';
+import Header from '../components/Header';
 import { Link } from 'react-router-dom';
 
 export const Calender: React.FC = () => {
@@ -9,7 +9,7 @@ export const Calender: React.FC = () => {
         Calender
         <div></div>
       </div>
-      <Link to="/">Homeへ</Link>
+      <Link to="/">Topへ</Link>
     </>
   );
 };
