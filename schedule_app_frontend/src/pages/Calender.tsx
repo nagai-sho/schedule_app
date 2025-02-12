@@ -10,8 +10,8 @@ export const Calender: React.FC = () => {
       <div>
         Calender
         <div></div>
-        <div>○月</div>
       </div>
+      <div>○月</div>
       <div className="days">
         <Day />
         <Day />
