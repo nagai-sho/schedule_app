@@ -18,6 +18,8 @@ function App() {
       <div>
         <Link to="/assets/edit">登録・編集へ</Link>
         <br />
+        <Link to="/vehicles/edit">車両の登録・編集へ</Link>
+        <br />
         <Link to="/calender/show">カレンダーへ</Link>
         <br />
       </div>
