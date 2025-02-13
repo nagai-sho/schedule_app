@@ -5,7 +5,11 @@ const Transport: React.FC = () => {
       <details>
         <summary>○○現場</summary>
         <div>2tトラック</div>
-        <div>車両を追加する</div>
+        <select name="truck">
+          <option>車両を追加する</option>
+          <option>軽トラ</option>
+          <option>2tトラック</option>
+        </select>
       </details>
       <div>予定を追加する</div>
     </>
