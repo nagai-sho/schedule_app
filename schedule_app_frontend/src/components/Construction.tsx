@@ -7,7 +7,12 @@ const Construction: React.FC = () => {
         <div>山田</div>
         <div>佐藤</div>
         <div>田中</div>
-        <div>人員を追加する</div>
+        <select name="workers">
+          <option>人員を追加する</option>
+          <option>山田</option>
+          <option>佐藤</option>
+          <option>田中</option>
+        </select>
       </details>
       <div>予定を追加する</div>
     </>
