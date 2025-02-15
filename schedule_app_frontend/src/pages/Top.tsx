@@ -4,7 +4,7 @@ import { useState } from 'react';
 import '../styles/top.css';
 import StopWatch from '../components/StopWatch';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
+import Header from '../components/layout/Header';
 import Clock from '../components/Clock';
 
 function App() {

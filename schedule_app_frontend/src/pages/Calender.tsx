@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import Header from '../components/layout/Header';
 import { Link } from 'react-router-dom';
 import Day from '../components/Day';
 import '../styles/calender.css';
