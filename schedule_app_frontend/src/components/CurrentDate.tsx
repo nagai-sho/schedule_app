@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 const CurrentDate: React.FC = () => {
-  const [currentDate, setCurrentDate] = useState<string>('');
+  const currentMonth = new Date().toLocaleString('ja-jp', { month: 'numeric' });
+  // const [currentDate, setCurrentDate] = useState<string>('');
 
-  useEffect(() => {
-    const date = new Date();
-    setCurrentDate(date.toLocaleDateString());
-  }, []);
+  // useEffect(() => {
+  //   const date = new Date();
+  //   setCurrentDate(date.toLocaleDateString());
+  // }, []);
 
   return (
     <>
-      <div>CurrentDate: {currentDate}</div>
+      <div>{currentMonth}</div>
+      {/* <div>CurrentDate: {currentDate}</div> */}
     </>
   );
 };
