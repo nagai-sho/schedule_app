@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import Header from '../components/Header';
+import Header from '../components/layout/Header';
 
 export const Assets: FC = () => {
   const { id } = useParams<{ id: string }>();
