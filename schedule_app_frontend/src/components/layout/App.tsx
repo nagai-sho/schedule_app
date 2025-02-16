@@ -29,7 +29,8 @@ const App: React.FC = () => {
           'html, body, #root': {
             margin: 0,
             padding: 0,
-            height: '100%',
+            height: 'auto',
+            minHeight: '100%',
             width: '100%',
           },
         }}
@@ -39,7 +40,7 @@ const App: React.FC = () => {
         <Box
           sx={{
             width: '100%',
-            height: '100%',
+            minHeight: '100%',
             backgroundImage: `url(${
               backgroundImages[location.pathname] ||
               '/images/Second_factory_appearance.jpg'
