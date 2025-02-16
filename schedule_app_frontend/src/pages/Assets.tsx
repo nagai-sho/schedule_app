@@ -2,14 +2,12 @@ import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import Header from '../components/Header';
 
-export const Assets: FC = () => {
+const Assets: FC = () => {
   const { id } = useParams<{ id: string }>();
 
   return (
     <>
-      <Header />
       <div>
         <p>tab表示、クリックで表示内容切り替え</p>
         <div
@@ -99,4 +97,4 @@ export const Assets: FC = () => {
   );
 };
 
-// export default Assets;
+export default Assets;

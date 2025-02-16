@@ -1,23 +1,14 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+// エントリーポイント（レンダリング）
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './components/layout/App';
 import './styles/index.css';
-import App from './pages/Top.tsx';
 
-// import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Assets } from './pages/Assets.tsx';
-import { Vehicles } from './pages/Vehicles.tsx';
-import { Calender } from './pages/Calender.tsx';
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="assets/:id" element={<Assets />} />
-        <Route path="vehicles/:id" element={<Vehicles />} />
-        <Route path="Calender/:id" element={<Calender />} />
-      </Routes>
+      <App />
     </BrowserRouter>
-  </StrictMode>
+  </React.StrictMode>
 );
