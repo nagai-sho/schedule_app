@@ -92,7 +92,6 @@ const Assets: FC = () => {
           </div>
         </div>
       </div>
-      <Link to="/">Topへ</Link>
     </>
   );
 };
