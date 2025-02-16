@@ -7,6 +7,7 @@ import { GlobalStyles } from '@mui/system';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from '../../theme/theme';
 import { Box } from '@mui/material';
+import '../../styles/top.css';
 // import { Container } from '@mui/material'; // responsiveデザイン用
 
 const App: React.FC = () => {
