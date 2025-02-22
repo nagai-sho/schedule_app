@@ -8,9 +8,26 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from '../../theme/theme';
 import { Box } from '@mui/material';
 import '../../styles/top.css';
+import { useEffect, useState } from 'react';
 // import { Container } from '@mui/material'; // responsiveデザイン用
 
-const App: React.FC = () => {
+const App = ({ children }: { children: React.ReactNode }) => {
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      const header = document.getElementById('header');
+      if (header) {
+        setHeaderHeight(header.offsetHeight);
+      }
+    };
+    updateHeaderHeight(); // 初回実行
+    window.addEventListener('resize', updateHeaderHeight); // 画面サイズ変更時に再取得
+    return () => {
+      window.removeEventListener('resize', updateHeaderHeight);
+    };
+  }, []);
+
   const location = useLocation();
   const backgroundImages: Record<string, string> = {
     '/': '/images/Second_factory_appearance.jpg',
@@ -52,6 +69,7 @@ const App: React.FC = () => {
           }}
         >
           <Header />
+          <Box sx={{ paddingTop: `${headerHeight}px` }}>{children}</Box>
           <AppRoutes />
           <Footer />
         </Box>
