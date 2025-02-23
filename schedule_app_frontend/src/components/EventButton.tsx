@@ -1,4 +1,5 @@
 import Button from '@mui/material/Button';
+import colorCodes from '../styles/colors';
 
 const EventButton: React.FC = () => {
   return (
@@ -8,6 +9,7 @@ const EventButton: React.FC = () => {
         onClick={() => {
           console.log('save!');
         }}
+        sx={{ color: colorCodes.text.default }}
       >
         保存/編集
       </Button>
