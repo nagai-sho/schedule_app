@@ -9,11 +9,13 @@ import {
   ListItemText,
   Typography,
   Drawer,
+  Stack,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/kyowasetsubi_logo.png';
+import colorCodes from '../../styles/colors';
 
 const setNavLinks: Array<{ text: string; url: string }> = [
   { text: 'Top', url: '/' },
@@ -33,19 +35,41 @@ const Header: React.FC = () => {
   };
 
   return (
-    <AppBar component="header" position="fixed" id="header">
+    <AppBar
+      component="header"
+      position="fixed"
+      id="header"
+      sx={{
+        backgroundColor: 'transparent',
+        backdropFilter: 'Blur(3px)',
+        // backgroundColor: colorCodes.background.default || 'transparent',
+      }}
+    >
       <Container
         maxWidth={false}
         sx={{
-          minHeight: '100px',
+          height: '10vh',
+          minHeight: '70px',
           maxHeight: '200px',
           maxWidth: { xs: '100%', md: '100%', lg: 'none' },
+          // backgroundColor: 'transparent',
+          // backgroundColor: colorCodes.background.default,
+          // opacity: '0.5',
+          // backgroundColor: `${colorCodes.background.default}4D`,
         }}
       >
-        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Box
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: '100%',
+          }}
+        >
+          <Stack
+            direction="row"
+            spacing={1}
             sx={{
-              display: 'flex',
               alignItems: 'center',
               textDecoration: 'none',
             }}
@@ -53,8 +77,16 @@ const Header: React.FC = () => {
             <Link to="/calender/show">
               <img src={logo} alt="Calender-Signage" height="50" width="auto" />
             </Link>
-            <Typography sx={{ fontSize: '25px' }}>株式会社京和設備</Typography>
-          </Box>
+            <Typography
+              sx={{
+                fontSize: '25px',
+                color: colorCodes.text.emphasis,
+                fontWeight: 'bold',
+              }}
+            >
+              株式会社京和設備
+            </Typography>
+          </Stack>
           <Box>
             <List
               component="nav"
@@ -77,11 +109,24 @@ const Header: React.FC = () => {
                     sx={{
                       textAlign: 'center',
                       display: { xs: 'none', md: 'block' },
+                      color: colorCodes.text.default,
+                      // fontWeight: 'bold',
                     }}
                     component={Link}
                     to={navLink.url}
                   >
-                    <ListItemText primary={navLink.text} />
+                    <ListItemText
+                      primary={
+                        <Typography
+                          sx={{
+                            whiteSpace: 'nowrap',
+                            fontSize: '13px',
+                          }}
+                        >
+                          {navLink.text}
+                        </Typography>
+                      }
+                    />
                   </ListItemButton>
                 </ListItem>
               ))}
