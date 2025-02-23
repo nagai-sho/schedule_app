@@ -20,7 +20,7 @@ const Day: React.FC<DayProps> = ({ date }) => {
       >
         <Stack
           sx={{
-            border: `solid 1px ${colorCodes.border.default}`,
+            border: `solid 0.5px ${colorCodes.border.default}`,
             borderRadius: '10px',
             color: colorCodes.text.default,
             backgroundColor: 'transparent',
@@ -33,7 +33,7 @@ const Day: React.FC<DayProps> = ({ date }) => {
         </Stack>
         <Stack
           sx={{
-            border: `solid 1px ${colorCodes.border.default}`,
+            border: `solid 0.5px ${colorCodes.border.default}`,
             borderRadius: '10px',
             color: colorCodes.text.default,
             backgroundColor: 'transparent',
@@ -54,10 +54,12 @@ const Day: React.FC<DayProps> = ({ date }) => {
               fullWidth
               sx={{
                 mb: 2,
-                color: 'white', // 入力文字の色
-                input: { color: 'white' }, // 入力フィールドのテキスト色
-                '& .MuiInputLabel-root': { color: 'white' }, // ラベルの色
-                '& .MuiInputLabel-root.Mui-focused': { color: 'white' }, // フォーカス時のラベル色
+                color: colorCodes.text.default, // 入力文字の色
+                input: { color: colorCodes.text.default }, // 入力フィールドのテキスト色
+                '& .MuiInputLabel-root': { color: colorCodes.text.default }, // ラベルの色
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: colorCodes.text.default,
+                }, // フォーカス時のラベル色
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': { borderColor: 'gray' }, // 通常時の枠線
                   '&:hover fieldset': { borderColor: 'green' }, // ホバー時の枠線
