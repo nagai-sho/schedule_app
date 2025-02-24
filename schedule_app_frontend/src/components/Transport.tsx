@@ -4,6 +4,7 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -14,20 +15,30 @@ import {
 
 const Transport: React.FC = () => {
   const [truck, setTruck] = useState('');
-  const handleChange = (event: SelectChangeEvent<string>) => {
-    setTruck(event.target.value);
+  const handleChange = (e: SelectChangeEvent<string>) => {
+    setTruck(e.target.value);
   };
   return (
     <>
       <Typography>搬入予定</Typography>
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMore />}>
-          <Typography>○○現場</Typography>
-        </AccordionSummary>
+      <Accordion sx={{ backgroundColor: 'transparent' }}>
+        <AccordionSummary expandIcon={<ExpandMore />}>○○現場</AccordionSummary>
         <AccordionDetails>
-          <Typography>{truck}</Typography>
+          <Typography
+            sx={{
+              margin: '5px',
+            }}
+          >
+            {truck}
+          </Typography>
           <FormControl fullWidth>
-            <InputLabel>車両を選択</InputLabel>
+            <InputLabel
+              sx={{
+                fontSize: '13px',
+              }}
+            >
+              車両を選択
+            </InputLabel>
             <Select value={truck} onChange={handleChange} label={'車両を選択'}>
               {/* <MenuItem>車両を追加する</MenuItem> */}
               <MenuItem value={'軽トラ'}>軽トラ</MenuItem>
@@ -36,7 +47,7 @@ const Transport: React.FC = () => {
           </FormControl>
         </AccordionDetails>
       </Accordion>
-      <Typography>予定を追加する</Typography>
+      <Button sx={{ marginBottom: '5px' }}>予定を追加する</Button>
     </>
   );
 };

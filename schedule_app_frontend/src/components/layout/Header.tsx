@@ -19,9 +19,9 @@ import colorCodes from '../../styles/colors';
 
 const setNavLinks: Array<{ text: string; url: string }> = [
   { text: 'Top', url: '/' },
+  { text: 'カレンダー', url: 'calender/show' },
   { text: '従業員', url: 'assets/edit' },
   { text: '車両', url: 'vehicles/edit' },
-  { text: 'カレンダー', url: 'calender/show' },
   { text: '登録情報', url: 'mypage' },
 ];
 
