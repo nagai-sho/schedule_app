@@ -33,7 +33,6 @@ const Calender: React.FC = () => {
           <Day date={new Date(today.getTime() + 5 * 24 * 60 * 60 * 1000)} />
           <Day date={new Date(today.getTime() + 6 * 24 * 60 * 60 * 1000)} />
         </Stack>
-        <Link to="/">Topへ</Link>
       </Box>
     </>
   );
