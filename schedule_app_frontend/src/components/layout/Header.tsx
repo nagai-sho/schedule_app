@@ -75,7 +75,12 @@ const Header: React.FC = () => {
             }}
           >
             <Link to="/calender/show">
-              <img src={logo} alt="Calender-Signage" height="50" width="auto" />
+              <img
+                src={logo}
+                alt="Calender-Signage"
+                height="50px"
+                width="50px"
+              />
             </Link>
             <Typography
               sx={{
