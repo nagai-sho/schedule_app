@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Top from '../pages/Top';
 import Assets from '../pages/Assets';
-import Vehicles from '../pages/Vehicles';
+import Vehicles from '../pages/VehiclesPage';
 import Calender from '../pages/Calender';
 // import Mypage from '../pages/Mypage';
 import NotFound from '../pages/NotFound';
