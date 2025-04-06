@@ -122,6 +122,7 @@ exports.Prisma.UserScalarFieldEnum = {
   name: 'name',
   email: 'email',
   phoneNumber: 'phoneNumber',
+  hashedPassword: 'hashedPassword',
   company: 'company',
   postalCode: 'postalCode',
   address: 'address',
@@ -138,6 +139,7 @@ exports.Prisma.UserOrderByRelevanceFieldEnum = {
   name: 'name',
   email: 'email',
   phoneNumber: 'phoneNumber',
+  hashedPassword: 'hashedPassword',
   company: 'company',
   postalCode: 'postalCode',
   address: 'address'

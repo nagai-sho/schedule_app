@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "app/generated/prisma/client"
 }
 
 datasource db {
@@ -16,15 +15,16 @@ datasource db {
 
 // ログインユーザー（アカウント）
 model User {
-  id          Int      @id @default(autoincrement())
-  name        String   @db.VarChar(255)
-  email       String   @unique
-  phoneNumber String   @unique @db.VarChar(15)
-  company     String   @db.VarChar(255)
-  postalCode  String   @db.VarChar(7)
-  address     String   @db.VarChar(255)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id             Int      @id @default(autoincrement())
+  name           String   @db.VarChar(255)
+  email          String   @unique
+  phoneNumber    String   @unique @db.VarChar(15)
+  hashedPassword String
+  company        String   @db.VarChar(255)
+  postalCode     String   @db.VarChar(7)
+  address        String   @db.VarChar(255)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
 
 // 従業員情報

@@ -886,6 +886,7 @@ export namespace Prisma {
     name: string | null
     email: string | null
     phoneNumber: string | null
+    hashedPassword: string | null
     company: string | null
     postalCode: string | null
     address: string | null
@@ -898,6 +899,7 @@ export namespace Prisma {
     name: string | null
     email: string | null
     phoneNumber: string | null
+    hashedPassword: string | null
     company: string | null
     postalCode: string | null
     address: string | null
@@ -910,6 +912,7 @@ export namespace Prisma {
     name: number
     email: number
     phoneNumber: number
+    hashedPassword: number
     company: number
     postalCode: number
     address: number
@@ -932,6 +935,7 @@ export namespace Prisma {
     name?: true
     email?: true
     phoneNumber?: true
+    hashedPassword?: true
     company?: true
     postalCode?: true
     address?: true
@@ -944,6 +948,7 @@ export namespace Prisma {
     name?: true
     email?: true
     phoneNumber?: true
+    hashedPassword?: true
     company?: true
     postalCode?: true
     address?: true
@@ -956,6 +961,7 @@ export namespace Prisma {
     name?: true
     email?: true
     phoneNumber?: true
+    hashedPassword?: true
     company?: true
     postalCode?: true
     address?: true
@@ -1055,6 +1061,7 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
+    hashedPassword: string
     company: string
     postalCode: string
     address: string
@@ -1086,6 +1093,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
+    hashedPassword?: boolean
     company?: boolean
     postalCode?: boolean
     address?: boolean
@@ -1100,6 +1108,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     phoneNumber?: boolean
+    hashedPassword?: boolean
     company?: boolean
     postalCode?: boolean
     address?: boolean
@@ -1107,7 +1116,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "phoneNumber" | "company" | "postalCode" | "address" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "phoneNumber" | "hashedPassword" | "company" | "postalCode" | "address" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
@@ -1117,6 +1126,7 @@ export namespace Prisma {
       name: string
       email: string
       phoneNumber: string
+      hashedPassword: string
       company: string
       postalCode: string
       address: string
@@ -1495,6 +1505,7 @@ export namespace Prisma {
     readonly name: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly phoneNumber: FieldRef<"User", 'String'>
+    readonly hashedPassword: FieldRef<"User", 'String'>
     readonly company: FieldRef<"User", 'String'>
     readonly postalCode: FieldRef<"User", 'String'>
     readonly address: FieldRef<"User", 'String'>
@@ -1840,6 +1851,7 @@ export namespace Prisma {
     name: 'name',
     email: 'email',
     phoneNumber: 'phoneNumber',
+    hashedPassword: 'hashedPassword',
     company: 'company',
     postalCode: 'postalCode',
     address: 'address',
@@ -1862,6 +1874,7 @@ export namespace Prisma {
     name: 'name',
     email: 'email',
     phoneNumber: 'phoneNumber',
+    hashedPassword: 'hashedPassword',
     company: 'company',
     postalCode: 'postalCode',
     address: 'address'
@@ -1914,6 +1927,7 @@ export namespace Prisma {
     name?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
     phoneNumber?: StringFilter<"User"> | string
+    hashedPassword?: StringFilter<"User"> | string
     company?: StringFilter<"User"> | string
     postalCode?: StringFilter<"User"> | string
     address?: StringFilter<"User"> | string
@@ -1926,6 +1940,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
+    hashedPassword?: SortOrder
     company?: SortOrder
     postalCode?: SortOrder
     address?: SortOrder
@@ -1942,6 +1957,7 @@ export namespace Prisma {
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     name?: StringFilter<"User"> | string
+    hashedPassword?: StringFilter<"User"> | string
     company?: StringFilter<"User"> | string
     postalCode?: StringFilter<"User"> | string
     address?: StringFilter<"User"> | string
@@ -1954,6 +1970,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
+    hashedPassword?: SortOrder
     company?: SortOrder
     postalCode?: SortOrder
     address?: SortOrder
@@ -1974,6 +1991,7 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
     phoneNumber?: StringWithAggregatesFilter<"User"> | string
+    hashedPassword?: StringWithAggregatesFilter<"User"> | string
     company?: StringWithAggregatesFilter<"User"> | string
     postalCode?: StringWithAggregatesFilter<"User"> | string
     address?: StringWithAggregatesFilter<"User"> | string
@@ -1985,6 +2003,7 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
+    hashedPassword: string
     company: string
     postalCode: string
     address: string
@@ -1997,6 +2016,7 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
+    hashedPassword: string
     company: string
     postalCode: string
     address: string
@@ -2008,6 +2028,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
+    hashedPassword?: StringFieldUpdateOperationsInput | string
     company?: StringFieldUpdateOperationsInput | string
     postalCode?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
@@ -2020,6 +2041,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
+    hashedPassword?: StringFieldUpdateOperationsInput | string
     company?: StringFieldUpdateOperationsInput | string
     postalCode?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
@@ -2032,6 +2054,7 @@ export namespace Prisma {
     name: string
     email: string
     phoneNumber: string
+    hashedPassword: string
     company: string
     postalCode: string
     address: string
@@ -2043,6 +2066,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
+    hashedPassword?: StringFieldUpdateOperationsInput | string
     company?: StringFieldUpdateOperationsInput | string
     postalCode?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
@@ -2055,6 +2079,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phoneNumber?: StringFieldUpdateOperationsInput | string
+    hashedPassword?: StringFieldUpdateOperationsInput | string
     company?: StringFieldUpdateOperationsInput | string
     postalCode?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
@@ -2110,6 +2135,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
+    hashedPassword?: SortOrder
     company?: SortOrder
     postalCode?: SortOrder
     address?: SortOrder
@@ -2126,6 +2152,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
+    hashedPassword?: SortOrder
     company?: SortOrder
     postalCode?: SortOrder
     address?: SortOrder
@@ -2138,6 +2165,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phoneNumber?: SortOrder
+    hashedPassword?: SortOrder
     company?: SortOrder
     postalCode?: SortOrder
     address?: SortOrder
