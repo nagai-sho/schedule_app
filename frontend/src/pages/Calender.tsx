@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Day from '../components/Day';
 // import '../styles/calender.css';
 import CurrentDate from '../components/CurrentDate';

@@ -15,7 +15,7 @@
         ]
       }
     },
-    "/users": {
+    "/user": {
       "get": {
         "operationId": "UserController_findAll",
         "parameters": [],

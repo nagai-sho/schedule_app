@@ -33,6 +33,7 @@ const App = ({ children }: { children: React.ReactNode }) => {
     '/': '/images/Second_factory_appearance.jpg',
     '/assets': '/images/Second_factory_appearance.jpg',
     '/vehicles': '/images/Second_factory_appearance.jpg',
+    '/mypage': '/images/Second_factory_appearance.jpg',
   };
 
   return (

@@ -22,7 +22,7 @@ const setNavLinks: Array<{ text: string; url: string }> = [
   { text: 'カレンダー', url: 'calender/show' },
   { text: '従業員', url: 'assets/edit' },
   { text: '車両', url: 'vehicles/edit' },
-  { text: '登録情報', url: 'mypage' },
+  { text: '登録情報', url: 'mypage/edit' },
 ];
 
 const Header: React.FC = () => {
@@ -109,16 +109,16 @@ const Header: React.FC = () => {
                 </ListItemButton>
               </ListItem>
               {setNavLinks.map((navLink) => (
-                <ListItem disablePadding>
+                <ListItem key={navLink.url} disablePadding>
                   <ListItemButton
+                    to={navLink.url}
+                    component={Link}
                     sx={{
                       textAlign: 'center',
                       display: { xs: 'none', md: 'block' },
                       color: colorCodes.text.default,
                       // fontWeight: 'bold',
                     }}
-                    component={Link}
-                    to={navLink.url}
                   >
                     <ListItemText
                       primary={
@@ -159,7 +159,7 @@ const Header: React.FC = () => {
                 </ListItemButton>
               </ListItem>
               {setNavLinks.map((navLink) => (
-                <ListItem disablePadding>
+                <ListItem key={navLink.url} disablePadding>
                   <ListItemButton
                     onClick={handleDrawerClose}
                     sx={{
