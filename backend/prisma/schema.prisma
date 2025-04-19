@@ -15,16 +15,21 @@ datasource db {
 
 // ログインユーザー（アカウント）
 model User {
-  id             Int      @id @default(autoincrement())
+  // ── 通常カラム ──────────────────────────────────────────────
+  userId         Int      @id @default(autoincrement())
   name           String   @db.VarChar(255)
   email          String   @unique
-  phoneNumber    String   @unique @db.VarChar(15)
+  phoneNumber    String?  @unique @db.VarChar(15)
   hashedPassword String
-  company        String   @db.VarChar(255)
-  postalCode     String   @db.VarChar(7)
-  address        String   @db.VarChar(255)
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  company        String?  @db.VarChar(255)
+  postalCode     String?  @db.VarChar(7)
+  address        String?  @db.VarChar(255)
+
+  // ── タイムスタンプ ────────────────────────────────────────────
+  createdAt      DateTime @default(now()) // 作成日時
+  updatedAt      DateTime @updatedAt // 更新日時
+  // ── 外部キー ────────────────────────────────────────────────
+  // ── 外部リレーション ───────────────────────────────────────────
 }
 
 // 従業員情報
