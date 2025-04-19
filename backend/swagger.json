@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "AppController_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "App"
+        ]
+      }
+    },
+    "/users": {
+      "get": {
+        "operationId": "UserController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Get all users successfully."
+          }
+        },
+        "tags": [
+          "user"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "API schedule APP",
+    "description": "API schedule_app",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [
+    {
+      "name": "schedule_app",
+      "description": ""
+    }
+  ],
+  "servers": [],
+  "components": {
+    "schemas": {}
+  }
+}
