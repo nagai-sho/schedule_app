@@ -6,7 +6,7 @@ CREATE TABLE `User` (
     `phoneNumber` VARCHAR(15) NULL,
     `hashedPassword` VARCHAR(191) NOT NULL,
     `company` VARCHAR(255) NULL,
-    `postalCode` VARCHAR(7) NULL,
+    `postalCode` VARCHAR(10) NULL,
     `address` VARCHAR(255) NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,

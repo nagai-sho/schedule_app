@@ -4,14 +4,14 @@ const prisma = new PrismaClient();
 async function main() {
   const users = [
     {
-      name: 'alice',
+      name: '橋並　将人',
       email: 'sample@prisma.io',
       phoneNumber: '09012345678',
       hashedPassword:
         '$2b$12$tg885CjGIz1qs1nN2KFmlu6XdEPc.ucVzx4dwe9thxqL/rpaqWY9C',
-      company: 'sample株式会社',
+      company: '株式会社京和設備',
       postalCode: '1234567',
-      address: 'sample県sample市',
+      address: '京都府長岡京市',
     },
     {
       name: 'bob',
