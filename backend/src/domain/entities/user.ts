@@ -11,7 +11,6 @@ export class User {
   updatedAt: Date;
 
   constructor(
-    userId: number | undefined, // optional にしておくと DB 自動採番に対応しやすい
     name: string,
     email: string,
     phoneNumber: string | null,
@@ -20,8 +19,7 @@ export class User {
     postalCode: string | null,
     address: string | null,
   ) {
-    (this.userId = userId),
-      (this.name = name),
+    (this.name = name),
       (this.email = email),
       (this.phoneNumber = phoneNumber),
       (this.hashedPassword = hashedPassword),
@@ -32,32 +30,9 @@ export class User {
       (this.updatedAt = new Date());
   }
 
-  public static reconstruct(
-    userId: number,
-    name: string,
-    email: string,
-    phoneNumber: string | null,
-    hashedPassword: string,
-    company: string | null,
-    postalCode: string | null,
-    address: string | null,
-    createdAt: Date,
-    updatedAt: Date,
-  ): User {
+  public static reconstruct(params: Partial<User>): User {
     const user = Object.create(User.prototype) as User;
-
-    Object.assign(user, {
-      userId,
-      name,
-      email,
-      phoneNumber,
-      hashedPassword,
-      company,
-      postalCode,
-      address,
-      createdAt,
-      updatedAt,
-    });
+    Object.assign(user, params);
     return user;
   }
 

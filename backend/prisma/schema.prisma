@@ -22,7 +22,7 @@ model User {
   phoneNumber    String?  @unique @db.VarChar(15)
   hashedPassword String
   company        String?  @db.VarChar(255)
-  postalCode     String?  @db.VarChar(7)
+  postalCode     String?  @db.VarChar(10)
   address        String?  @db.VarChar(255)
 
   // ── タイムスタンプ ────────────────────────────────────────────
