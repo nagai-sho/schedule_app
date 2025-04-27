@@ -75,17 +75,17 @@ export class UsersRepository implements UsersRepositoryInterface {
   }
 
   private translateToDomain(user): User {
-    return User.reconstruct(
-      user.userId,
-      user.name,
-      user.email,
-      user.phoneNumber,
-      user.hashedPassword,
-      user.company,
-      user.postalCode,
-      user.address,
-      user.createdAt,
-      user.updatedAt,
-    );
+    return User.reconstruct({
+      userId: user.userId,
+      name: user.name,
+      email: user.email,
+      phoneNumber: user.phoneNumber,
+      hashedPassword: user.hashedPassword,
+      company: user.company,
+      postalCode: user.postalCode,
+      address: user.address,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+    });
   }
 }

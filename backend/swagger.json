@@ -17,15 +17,143 @@
     },
     "/users": {
       "get": {
-        "operationId": "UserController_findAll",
+        "operationId": "UserController_getUsers",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Get all users successfully."
+            "description": "ユーザー一覧を取得する",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUsersResponse"
+                }
+              }
+            }
           }
         },
         "tags": [
-          "user"
+          "users"
+        ]
+      },
+      "post": {
+        "operationId": "UserController_createUser",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "ユーザーを作成する",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostUserResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "operationId": "UserController_getUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "description": "ユーザーID",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ユーザー情報を取得する",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUserResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "put": {
+        "operationId": "UserController_updateUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "description": "ユーザーID",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ユーザー情報を更新する",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutUserResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "delete": {
+        "operationId": "UserController_deleteUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "description": "ユーザーID",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "users"
         ]
       }
     }
@@ -44,6 +172,269 @@
   ],
   "servers": [],
   "components": {
-    "schemas": {}
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "number",
+            "description": "ユーザーID"
+          },
+          "name": {
+            "type": "string",
+            "description": "ユーザー名"
+          },
+          "email": {
+            "type": "string",
+            "description": "メールアドレス"
+          },
+          "hashedPassword": {
+            "type": "string",
+            "description": "パスワード"
+          },
+          "phoneNumber": {
+            "type": "object",
+            "description": "電話番号"
+          },
+          "company": {
+            "type": "object",
+            "description": "会社名"
+          },
+          "postalCode": {
+            "type": "object",
+            "description": "郵便番号"
+          },
+          "address": {
+            "type": "object",
+            "description": "会社住所"
+          }
+        },
+        "required": [
+          "userId",
+          "name",
+          "email",
+          "hashedPassword",
+          "phoneNumber",
+          "company",
+          "postalCode",
+          "address"
+        ]
+      },
+      "GetUsersResponse": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "description": "ユーザーリスト",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        },
+        "required": [
+          "users"
+        ]
+      },
+      "GetUserResponse": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "description": "ユーザー",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/User"
+              }
+            ]
+          }
+        },
+        "required": [
+          "user"
+        ]
+      },
+      "PostUserRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "ユーザー名"
+          },
+          "email": {
+            "type": "string",
+            "description": "メールアドレス"
+          },
+          "hashedPassword": {
+            "type": "string",
+            "description": "パスワード"
+          },
+          "phoneNumber": {
+            "type": "object",
+            "description": "電話番号",
+            "nullable": true
+          },
+          "company": {
+            "type": "object",
+            "description": "会社名",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "object",
+            "description": "郵便番号",
+            "nullable": true
+          },
+          "address": {
+            "type": "object",
+            "description": "会社住所"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "hashedPassword",
+          "phoneNumber",
+          "company",
+          "postalCode",
+          "address"
+        ]
+      },
+      "PostUserResponse": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "number",
+            "description": "ユーザーID"
+          },
+          "name": {
+            "type": "string",
+            "description": "ユーザー名"
+          },
+          "email": {
+            "type": "string",
+            "description": "メールアドレス"
+          },
+          "hashedPassword": {
+            "type": "string",
+            "description": "パスワード"
+          },
+          "phoneNumber": {
+            "type": "object",
+            "description": "電話番号"
+          },
+          "company": {
+            "type": "object",
+            "description": "会社名"
+          },
+          "postalCode": {
+            "type": "object",
+            "description": "郵便番号"
+          },
+          "address": {
+            "type": "object",
+            "description": "会社住所"
+          }
+        },
+        "required": [
+          "userId",
+          "name",
+          "email",
+          "hashedPassword",
+          "phoneNumber",
+          "company",
+          "postalCode",
+          "address"
+        ]
+      },
+      "PutUserRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "ユーザー名"
+          },
+          "email": {
+            "type": "string",
+            "description": "メールアドレス"
+          },
+          "hashedPassword": {
+            "type": "string",
+            "description": "パスワード"
+          },
+          "phoneNumber": {
+            "type": "object",
+            "description": "電話番号",
+            "nullable": true
+          },
+          "company": {
+            "type": "object",
+            "description": "会社名",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "object",
+            "description": "郵便番号",
+            "nullable": true
+          },
+          "address": {
+            "type": "object",
+            "description": "会社住所"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "hashedPassword",
+          "phoneNumber",
+          "company",
+          "postalCode",
+          "address"
+        ]
+      },
+      "PutUserResponse": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "number",
+            "description": "ユーザーID"
+          },
+          "name": {
+            "type": "string",
+            "description": "ユーザー名"
+          },
+          "email": {
+            "type": "string",
+            "description": "メールアドレス"
+          },
+          "hashedPassword": {
+            "type": "string",
+            "description": "パスワード"
+          },
+          "phoneNumber": {
+            "type": "object",
+            "description": "電話番号"
+          },
+          "company": {
+            "type": "object",
+            "description": "会社名"
+          },
+          "postalCode": {
+            "type": "object",
+            "description": "郵便番号"
+          },
+          "address": {
+            "type": "object",
+            "description": "会社住所"
+          }
+        },
+        "required": [
+          "userId",
+          "name",
+          "email",
+          "hashedPassword",
+          "phoneNumber",
+          "company",
+          "postalCode",
+          "address"
+        ]
+      }
+    }
   }
 }

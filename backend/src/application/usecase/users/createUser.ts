@@ -23,10 +23,10 @@ export class CreateUserDto {
   constructor(
     public readonly name: string,
     public readonly email: string,
-    public readonly phoneNumber: string,
+    public readonly phoneNumber: string | null,
     public readonly hashedPassword: string,
-    public readonly company: string,
-    public readonly postalCode: string,
-    public readonly address: string,
+    public readonly company: string | null,
+    public readonly postalCode: string | null,
+    public readonly address: string | null,
   ) {}
 }

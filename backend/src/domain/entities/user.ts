@@ -1,5 +1,5 @@
 export class User {
-  userId?: number; // DB側で自動採番するので optional に
+  userId: number;
   name: string;
   email: string;
   phoneNumber: string | null;
