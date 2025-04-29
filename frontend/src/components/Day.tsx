@@ -3,7 +3,7 @@ import Construction from './Construction';
 import Transport from './Transport';
 import EventButton from './EventButton';
 import { Box, Stack, TextField } from '@mui/material';
-import colorCodes from '../styles/colors';
+import colorCodes from '../config/colors';
 // import '../styles/day.css';
 
 interface DayProps {

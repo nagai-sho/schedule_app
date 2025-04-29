@@ -9,6 +9,7 @@ import theme from '../../theme/theme';
 import { Box } from '@mui/material';
 import '../../styles/top.css';
 import { useEffect, useState } from 'react';
+import { SnackbarProvider } from 'notistack';
 // import { Container } from '@mui/material'; // responsiveデザイン用
 
 const App = ({ children }: { children: React.ReactNode }) => {
@@ -43,7 +44,7 @@ const App = ({ children }: { children: React.ReactNode }) => {
           '*': {
             margin: 0,
             padding: 0,
-            baxSizing: 'border-box',
+            boxSizing: 'border-box',
           },
           'html, body, #root': {
             margin: 0,
@@ -56,24 +57,26 @@ const App = ({ children }: { children: React.ReactNode }) => {
       />
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Box
-          sx={{
-            width: '100%',
-            minHeight: '100%',
-            backgroundImage: `url(${
-              backgroundImages[location.pathname] ||
-              '/images/Second_factory_appearance.jpg'
-            })`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
-          }}
-        >
-          <Header />
-          <Box sx={{ paddingTop: `${headerHeight}px` }}>{children}</Box>
-          <AppRoutes />
-          <Footer />
-        </Box>
+        <SnackbarProvider maxSnack={3}>
+          <Box
+            sx={{
+              width: '100%',
+              minHeight: '100%',
+              backgroundImage: `url(${
+                backgroundImages[location.pathname] ||
+                '/images/Second_factory_appearance.jpg'
+              })`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundAttachment: 'fixed',
+            }}
+          >
+            <Header />
+            <Box sx={{ paddingTop: `${headerHeight}px` }}>{children}</Box>
+            <AppRoutes />
+            <Footer />
+          </Box>
+        </SnackbarProvider>
       </ThemeProvider>
     </>
   );

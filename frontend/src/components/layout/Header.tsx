@@ -1,4 +1,4 @@
-import { use, useState } from 'react';
+import { useState } from 'react';
 import {
   AppBar,
   Container,
@@ -15,7 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/kyowasetsubi_logo.png';
-import colorCodes from '../../styles/colors';
+import colorCodes from '../../config/colors';
 
 const setNavLinks: Array<{ text: string; url: string }> = [
   { text: 'Top', url: '/' },
