@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import colorCodes from '../styles/colors';
+import colorCodes from '../config/colors';
 
 const EventButton: React.FC = () => {
   return (
