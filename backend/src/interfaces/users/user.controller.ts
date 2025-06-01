@@ -117,11 +117,14 @@ export class UserController {
     type: PutUserResponse,
   })
   async updateUser(
-    @Param() pathParams: PathParams,
+    @Param('id') id: string,
     @Body() request: PutUserRequest,
   ): Promise<PutUserResponse> {
+    console.log('pathParams: ', id);
+    console.log('putRequest: ', request);
+
     const updateUserDto = {
-      userId: pathParams.userId,
+      userId: Number(Number(id)),
       name: request.name,
       email: request.email,
       phoneNumber: request.phoneNumber,
@@ -149,7 +152,7 @@ export class UserController {
     description: 'Not found',
   })
   @HttpCode(HttpStatus.NO_CONTENT)
-  async deleteUser(@Param() pathParams: PathParams): Promise<void> {
-    await this.deleteUseCase.execute(pathParams.userId);
+  async deleteUser(@Param('id') id: string): Promise<void> {
+    await this.deleteUseCase.execute(Number(id));
   }
 }

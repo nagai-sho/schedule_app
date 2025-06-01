@@ -99,12 +99,11 @@
         "operationId": "UserController_updateUser",
         "parameters": [
           {
-            "name": "userId",
+            "name": "id",
             "required": true,
             "in": "path",
-            "description": "ユーザーID",
             "schema": {
-              "type": "number"
+              "type": "string"
             }
           }
         ],
@@ -138,12 +137,11 @@
         "operationId": "UserController_deleteUser",
         "parameters": [
           {
-            "name": "userId",
+            "name": "id",
             "required": true,
             "in": "path",
-            "description": "ユーザーID",
             "schema": {
-              "type": "number"
+              "type": "string"
             }
           }
         ],

@@ -8,11 +8,12 @@ import { enqueueSnackbar } from 'notistack';
 import { useForm } from 'react-hook-form';
 import { FormValues } from '../formValue/FormValues';
 import InputUserForm from '../components/InputUserForm';
+import axios from 'axios';
 
 interface Props {
-  title: string;
   isOpen: boolean;
   onCancel: () => void;
+  onSubmit: () => void;
 }
 
 const styles = {
@@ -27,7 +28,7 @@ const styles = {
   },
 };
 
-const CreateUserDialog: React.FC<Props> = ({ title, isOpen, onCancel }) => {
+const CreateUserDialog: React.FC<Props> = ({ isOpen, onCancel, onSubmit }) => {
   const methods = useForm<FormValues>({
     defaultValues: {
       name: '',
@@ -49,11 +50,18 @@ const CreateUserDialog: React.FC<Props> = ({ title, isOpen, onCancel }) => {
       enqueueSnackbar('ユーザーを作成しました', {
         variant: 'success',
       });
+      onSubmit();
     },
-    () => {
-      enqueueSnackbar('ユーザーの作成に失敗しました', {
-        variant: 'error',
-      });
+    (error: unknown) => {
+      if (axios.isAxiosError(error) && error.status === 409) {
+        enqueueSnackbar('そのメールアドレスは既に登録されています', {
+          variant: 'error',
+        });
+      } else {
+        enqueueSnackbar('ユーザーの作成に失敗しました', {
+          variant: 'error',
+        });
+      }
     }
   );
 
@@ -75,7 +83,7 @@ const CreateUserDialog: React.FC<Props> = ({ title, isOpen, onCancel }) => {
         },
       }}
     >
-      <Box sx={styles.title}>{title}</Box>
+      <Box sx={styles.title}>新規ユーザー作成</Box>
 
       <InputUserForm control={control} />
 

@@ -1,4 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from 'src/common/prisma/prisma.service';
 import { User } from 'src/domain/entities/user';
@@ -9,6 +13,14 @@ export class UsersRepository implements UsersRepositoryInterface {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(user: User): Promise<User> {
+    const existingEmail = await this.prisma.user.findUnique({
+      where: { email: user.email },
+    });
+    if (existingEmail) {
+      throw new ConflictException(
+        `${existingEmail.email} is already registered!`,
+      );
+    }
     const created = await this.prisma.user.create({
       data: {
         userId: user.userId,
@@ -33,7 +45,7 @@ export class UsersRepository implements UsersRepositoryInterface {
       },
     });
     if (!user) {
-      throw new Error(`User with ID ${id} not found`);
+      throw new NotFoundException(`User with ID ${id} not found`);
     }
     return this.translateToDomain(user);
   }
@@ -48,6 +60,14 @@ export class UsersRepository implements UsersRepositoryInterface {
   }
 
   async update(user: User): Promise<User> {
+    const existingEmail = await this.prisma.user.findUnique({
+      where: { email: user.email },
+    });
+    if (existingEmail) {
+      throw new ConflictException(
+        `${existingEmail.email} is already registered!`,
+      );
+    }
     const updated = await this.prisma.user.update({
       where: {
         userId: user.userId,

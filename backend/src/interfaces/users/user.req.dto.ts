@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
   IsNotEmpty,
-  IsNumber,
+  IsNumberString,
   IsOptional,
   IsString,
   Matches,
@@ -15,7 +15,7 @@ export class PathParams {
   @ApiProperty({
     description: 'ユーザーID',
   })
-  @IsNumber()
+  @IsNumberString()
   @IsNotEmpty()
   userId: number;
 }
@@ -65,7 +65,6 @@ export class PostUserRequest {
   @IsString()
   @IsOptional()
   @MaxLength(100, { message: 'Company must be 100 characters or less' })
-  @MinLength(1, { message: 'Company must be 1 characters or more' })
   @Transform(({ value }) => value?.trim())
   company: string | null;
 

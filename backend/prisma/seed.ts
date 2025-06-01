@@ -10,7 +10,7 @@ async function main() {
       hashedPassword:
         '$2b$12$tg885CjGIz1qs1nN2KFmlu6XdEPc.ucVzx4dwe9thxqL/rpaqWY9C',
       company: '株式会社京和設備',
-      postalCode: '1234567',
+      postalCode: '123-4567',
       address: '京都府長岡京市',
     },
     {
@@ -20,7 +20,7 @@ async function main() {
       hashedPassword:
         '$2b$12$5W9M.vVoU6BGHzjHh6XKTpoUm5Wpa.4WR7Kz3u6ybyDY7LPrkj.Q0',
       company: 'bob株式会社',
-      postalCode: '2345678',
+      postalCode: '234-5678',
       address: 'bob県bob市',
     },
     {
@@ -30,7 +30,7 @@ async function main() {
       hashedPassword:
         '$2b$12$9N7yIUzRc9jUGwPMpQI5bOzwFrAOlmga/Ncdlmz9vGe/qXZdMN0Am',
       company: 'charlie株式会社',
-      postalCode: '3456789',
+      postalCode: '345-6789',
       address: 'charlie県charlie市',
     },
   ];
